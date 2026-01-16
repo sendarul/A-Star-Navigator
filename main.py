@@ -3,22 +3,11 @@ import matplotlib.pyplot as plt
 from robot_agent import RobotAgent
 
 # --- Environment Setup ---
+from environment import Environment
 
-# Create a 20x20 grid
-# 0 -> navigable space
-# 1 -> obstacle
-grid = np.zeros((20, 20), dtype=int)
-
-# Set perimeter boundaries
-grid[0, :] = 1
-grid[-1, :] = 1
-grid[:, 0] = 1
-grid[:, -1] = 1
-
-# Define a 'C' shaped obstacle to test pathfinding
-grid[3, 4:16] = 1
-grid[3:15, 4] = 1
-grid[14, 4:16] = 1
+# Use the 'C' shaped environment factory by default
+env = Environment.create_c_shape()
+grid = env.get_grid()
 
 
 # --- Visualization Function ---
