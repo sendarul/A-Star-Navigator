@@ -27,7 +27,7 @@ class Environment:
         return env
 
     @classmethod
-    def create_empty(cls, rows=10, cols=10) -> 'Environment':
+    def create_empty(cls, rows=20, cols=20) -> 'Environment':
         """Creates an empty environment with boundaries."""
         env = cls(rows, cols)
         env.grid[0, :] = 1
@@ -37,14 +37,14 @@ class Environment:
         return env
 
     @classmethod
-    def create_full_obstacle(cls, rows=10, cols=10) -> 'Environment':
+    def create_full_obstacle(cls, rows=20, cols=20) -> 'Environment':
         """Creates an environment completely filled with obstacles (except potential start/goal)."""
         env = cls(rows, cols)
         env.grid.fill(1)
         return env
 
     @classmethod
-    def create_no_boundary(cls, rows=10, cols=10) -> 'Environment':
+    def create_no_boundary(cls, rows=20, cols=20) -> 'Environment':
         """Creates an empty environment WITHOUT perimeter boundaries."""
         env = cls(rows, cols)
         return env
