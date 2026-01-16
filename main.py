@@ -56,12 +56,15 @@ def main():
     # Perform A* search
     path = bot.a_star_search(grid)
 
+    title = "A* Pathfinding Result: No Path Found"
     if path:
         bot.path = path  # Update robot with the found path
         print(f"Success! Path found with {len(path)} steps.")
-        visualize_game(grid, bot, 'A* Pathfinding Result')
+        title = f"A* Pathfinding Result: Success ({len(path)} steps)"
     else:
         print("No path found. Is the robot trapped?")
+    
+    visualize_game(grid, bot, title)
 
 if __name__ == "__main__":
     main()
